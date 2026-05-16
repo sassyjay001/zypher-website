@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zypher | Products</title>
+    <script>document.documentElement.classList.add('js', 'loading');window.setTimeout(function(){document.documentElement.classList.remove('loading');document.documentElement.classList.add('page-ready');}, 2500);</script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="logo" href="index.html">Zypher</a>
+        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+        <ul class="nav-links" id="primary-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main" id="top">
+        <section class="page-banner products-banner hidden">
+            <div class="banner-layout">
+                <div class="banner-copy">
+                    <p class="eyebrow">Our Products</p>
+                    <h1>AI Products Built for Real-World Performance</h1>
+                    <p>Purpose-built platforms that improve operations, strengthen decisions, and accelerate sustainable digital growth.</p>
+                    <div class="banner-chips" aria-label="Capabilities">
+                        <span>Automation</span>
+                        <span>Cloud</span>
+                        <span>Analytics</span>
+                        <span>Security</span>
+                    </div>
+                </div>
+                <figure class="banner-media hidden interactive-card">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Product team reviewing platform roadmap on large screen" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="filter-panel hidden" aria-label="Product filters">
+            <h2>Browse by Capability</h2>
+            <div class="filter-buttons" role="tablist" aria-label="Product categories">
+                <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
+                <button type="button" class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud</button>
+                <button type="button" class="filter-btn" data-filter="analytics" aria-pressed="false">Analytics</button>
+                <button type="button" class="filter-btn" data-filter="security" aria-pressed="false">Security</button>
+            </div>
+        </section>
+
+        <section class="products-page hidden">
+            <div class="product-container" id="productGrid">
+                <article class="product-card interactive-card" data-category="automation">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Automation interface with workflow nodes" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Automation</p>
+                    <h3>Zypher AI Core</h3>
+                    <p>Enterprise-grade machine learning engine for workflow automation and process optimization.</p>
+                    <ul class="product-points">
+                        <li>Rule and intent based orchestration</li>
+                        <li>Human approval checkpoints</li>
+                        <li>Audit-ready action logs</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+
+                <article class="product-card interactive-card" data-category="cloud">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" alt="Cloud infrastructure diagram on laptop" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Cloud</p>
+                    <h3>Zypher CloudX</h3>
+                    <p>Scalable cloud infrastructure designed for reliability, visibility, and cost efficiency.</p>
+                    <ul class="product-points">
+                        <li>Multi-region deployment templates</li>
+                        <li>Live observability and alerting</li>
+                        <li>Cost optimization insights</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+
+                <article class="product-card interactive-card" data-category="analytics">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1551281044-8b51d2a5bcf8?auto=format&fit=crop&w=1200&q=80" alt="Analytics dashboard with trends and performance lines" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Analytics</p>
+                    <h3>Zypher Analytics</h3>
+                    <p>Real-time intelligence platform with predictive insights and executive-ready reporting.</p>
+                    <ul class="product-points">
+                        <li>Streaming KPI dashboards</li>
+                        <li>Forecasting and anomaly detection</li>
+                        <li>Role-based reporting views</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+
+                <article class="product-card interactive-card" data-category="security">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80" alt="Cybersecurity lock interface with digital data" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Security</p>
+                    <h3>Zypher Shield</h3>
+                    <p>Continuous security monitoring layer that protects workloads and detects threats quickly.</p>
+                    <ul class="product-points">
+                        <li>Threat detection playbooks</li>
+                        <li>Configuration drift alerts</li>
+                        <li>Compliance posture tracking</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+
+                <article class="product-card interactive-card" data-category="automation">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Operations automation interface on multiple screens" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Automation</p>
+                    <h3>Zypher FlowOps</h3>
+                    <p>Low-code workflow automation for operations teams that need speed without chaos.</p>
+                    <ul class="product-points">
+                        <li>Drag-and-drop process builder</li>
+                        <li>ERP and CRM connectors</li>
+                        <li>Automated SLA tracking</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+
+                <article class="product-card interactive-card" data-category="analytics">
+                    <figure class="product-media">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Team observing business signal dashboards" loading="lazy">
+                    </figure>
+                    <p class="product-tag">Analytics</p>
+                    <h3>Zypher SignalIQ</h3>
+                    <p>Behavior intelligence layer that surfaces hidden patterns and customer risks in real time.</p>
+                    <ul class="product-points">
+                        <li>Churn and retention predictors</li>
+                        <li>Segment trend analysis</li>
+                        <li>Automated weekly insights</li>
+                    </ul>
+                    <button type="button" class="btn-secondary">Request Demo</button>
+                </article>
+            </div>
+            <p id="productEmptyState" class="empty-state" aria-live="polite">No products match this filter yet. Try a different category.</p>
+        </section>
+
+        <section class="quote-strip hidden">
+            <h2>Product Testimonials</h2>
+            <div class="quotes-grid">
+                <article class="mini-quote hidden interactive-card">
+                    <p>"CloudX gave us the reliability we needed before our peak season launch."</p>
+                    <h3>Head of Platform, NovaCart</h3>
+                </article>
+                <article class="mini-quote hidden interactive-card">
+                    <p>"SignalIQ surfaced churn signals that our team had been missing for months."</p>
+                    <h3>Growth Lead, PrimeHub</h3>
+                </article>
+                <article class="mini-quote hidden interactive-card">
+                    <p>"FlowOps cut manual handoffs by nearly half in our operations pipeline."</p>
+                    <h3>COO, MetroLane Services</h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta hidden">
+            <h2>Need Help Choosing the Right Stack?</h2>
+            <p>Tell us your use case and we will recommend the best Zypher product combination for your team.</p>
+            <a class="btn-primary" href="contact.html">Talk to a Product Expert</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span class="year"></span> Zypher. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">Top</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
