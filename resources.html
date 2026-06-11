@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zypher | Resources</title>
+    <script>
+      document.documentElement.classList.add("js", "loading");
+      window.setTimeout(function () {
+        document.documentElement.classList.remove("loading");
+        document.documentElement.classList.add("page-ready");
+      }, 2500);
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="logo" href="index.html">Zypher</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        Menu
+      </button>
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-main" id="top">
+      <section class="page-banner resources-banner hidden">
+        <div class="banner-layout">
+          <div class="banner-copy">
+            <p class="eyebrow">Resources</p>
+            <h1>Practical Guides for Smarter Delivery</h1>
+            <p>
+              Use Zypher playbooks, checklists, and calculators to plan AI,
+              cloud, and automation work with more confidence.
+            </p>
+            <div class="banner-chips" aria-label="Resource topics">
+              <span>AI Workflows</span>
+              <span>Cloud Reliability</span>
+              <span>ROI Planning</span>
+              <span>Executive Briefs</span>
+            </div>
+          </div>
+          <figure class="banner-media hidden interactive-card">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+              alt="Strategy desk with reports, charts, and planning notes"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="resources-section hidden">
+        <h2>Featured Resource Library</h2>
+        <p class="section-intro">
+          Start with the tools most teams need before a transformation sprint,
+          platform rebuild, or executive planning session.
+        </p>
+        <div class="resource-grid">
+          <article class="resource-card hidden interactive-card">
+            <figure class="resource-media">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                alt="Workflow planning board with product tasks"
+                loading="lazy"
+              />
+            </figure>
+            <p class="product-tag">Playbook</p>
+            <h3>AI Workflow Guide</h3>
+            <p>
+              A practical guide for identifying repeatable workflows, approval
+              points, and automation risks before build begins.
+            </p>
+            <a class="btn-secondary" href="contact.html?resource=AI%20Workflow%20Guide">Request Guide</a>
+          </article>
+
+          <article class="resource-card hidden interactive-card">
+            <figure class="resource-media">
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+                alt="Cloud server room with connected infrastructure"
+                loading="lazy"
+              />
+            </figure>
+            <p class="product-tag">Checklist</p>
+            <h3>Cloud Reliability Checklist</h3>
+            <p>
+              A readiness checklist covering observability, failover,
+              deployment hygiene, access controls, and cost monitoring.
+            </p>
+            <a class="btn-secondary" href="contact.html?resource=Cloud%20Reliability%20Checklist">Request Checklist</a>
+          </article>
+
+          <article class="resource-card hidden interactive-card">
+            <figure class="resource-media">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                alt="Analytics dashboard showing business performance charts"
+                loading="lazy"
+              />
+            </figure>
+            <p class="product-tag">Calculator</p>
+            <h3>Automation ROI Calculator</h3>
+            <p>
+              Estimate time saved, operational impact, and priority scores for
+              automation candidates across your business.
+            </p>
+            <a class="btn-secondary" href="contact.html?resource=Automation%20ROI%20Calculator">Request Calculator</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="newsletter-section hidden">
+        <div class="newsletter-layout">
+          <div>
+            <h2>Get Monthly Delivery Notes</h2>
+            <p>
+              Receive concise ideas on AI operations, platform reliability,
+              automation strategy, and executive technology planning.
+            </p>
+          </div>
+          <form class="newsletter-form" data-newsletter-form novalidate>
+            <label for="newsletterEmail">Email Address</label>
+            <div class="newsletter-row">
+              <input
+                id="newsletterEmail"
+                name="newsletterEmail"
+                type="email"
+                placeholder="you@company.com"
+                required
+              />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </div>
+            <p
+              class="form-status"
+              data-newsletter-status
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span class="year"></span> Zypher. All rights reserved.</p>
+    </footer>
+
+    <button
+      id="backToTop"
+      class="back-to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      Top
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
