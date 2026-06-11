@@ -7,12 +7,14 @@
     setupRevealAnimations();
     setupScrollEnhancements();
     setupCounterAnimations();
-    setupCtaNotification();
+    setupContactContext();
     setupContactForm();
+    setupResourceSignup();
     setupProductFilters();
     setupFaqAccordion();
     setupMessageCounter();
-      setupCardTilt();
+    setupButtonMicroInteractions();
+    setupCardTilt();
     setupHeroParallax();
     setupTestimonialRotator();
 });
@@ -248,25 +250,6 @@ function setupCounterAnimations() {
     counters.forEach((counter) => counterObserver.observe(counter));
 }
 
-function setupCtaNotification() {
-    const ctaButton = document.getElementById('ctaButton');
-    const notification = document.getElementById('notification');
-
-    if (!ctaButton || !notification) {
-        return;
-    }
-
-    let timeoutId;
-
-    ctaButton.addEventListener('click', () => {
-        notification.classList.add('show');
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3200);
-    });
-}
-
 function setupContactForm() {
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
@@ -296,6 +279,77 @@ function setupContactForm() {
         setTimeout(() => {
             status.classList.remove('show');
         }, 4500);
+    });
+}
+
+function setupContactContext() {
+    const form = document.getElementById('contactForm');
+    if (!form) {
+        return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const contextMap = [
+        ['product', 'Product Demo'],
+        ['package', 'Engagement Package'],
+        ['resource', 'Resource Request'],
+        ['solution', 'Solution Blueprint'],
+    ];
+    const match = contextMap.find(([key]) => params.has(key));
+
+    if (!match) {
+        return;
+    }
+
+    const [key, interest] = match;
+    const context = params.get(key);
+    const interestField = document.getElementById('interest');
+    const sourceField = document.getElementById('sourceContext');
+    const messageField = document.getElementById('message');
+
+    if (interestField) {
+        interestField.value = interest;
+    }
+
+    if (sourceField && context && !sourceField.value) {
+        sourceField.value = context;
+    }
+
+    if (messageField && context && !messageField.value) {
+        messageField.value = `I would like to discuss ${context}.`;
+    }
+}
+
+function setupResourceSignup() {
+    const forms = document.querySelectorAll('[data-newsletter-form]');
+    if (!forms.length) {
+        return;
+    }
+
+    forms.forEach((form) => {
+        const status = form.querySelector('[data-newsletter-status]');
+        if (!status) {
+            return;
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!form.checkValidity()) {
+                status.textContent = 'Please enter a valid email address.';
+                status.classList.add('show', 'error');
+                return;
+            }
+
+            status.textContent = 'You are subscribed. Watch your inbox for the next Zypher note.';
+            status.classList.remove('error');
+            status.classList.add('show');
+            form.reset();
+
+            window.setTimeout(() => {
+                status.classList.remove('show');
+            }, 4500);
+        });
     });
 }
 
